@@ -1,10 +1,23 @@
 require("dotenv").config();
 
+const fs = require("fs");
 const Discord = require("discord.js");
 const { prefix } = require("./config.json");
 
 // create a new Discord client
 const client = new Discord.Client();
+client.commands = new Discord.Collection();
+
+const commandFiles = fs
+  .readdirSync("./commands")
+  .filter((file) => file.endsWith(".js"));
+
+for (const file of commandFiles) {
+  const command = require(`./commands/${file}`);
+  // set a new item in the Collection
+  // with the key as the command name and the value as the exported module
+  client.commands.set(command.name, command);
+}
 
 // retrieve bot token from .env file
 const TOKEN = process.env.TOKEN;
@@ -25,24 +38,12 @@ client.on("message", (message) => {
   const args = message.content.slice(prefix.length).trim().split(/ +/);
   const command = args.shift().toLowerCase();
 
-  if (command === "volume") {
-    if (args.length != 2) {
-      return message.channel.send(
-        'Set my volume by providing a number 1-10\nExample: "gabe volume 5"'
-      );
-    }
+  if (!client.commands.has(command)) return;
 
-    const requestedVolume = parseInt(args[1]);
-    if (isNaN(requestedVolume)) {
-      return message.reply("That doesn't seem to be a valid number");
-    } else if (requestedVolume > 10 || requestedVolume < 1) {
-      return message.channel.send(
-        'Set my volume by providing a number 1-10\nExample: "gabe volume 5"'
-      );
-    }
-
-    return message.channel.send(`Setting volume to ${requestedVolume}`);
-  } else if (command === "info") {
-    return message.channel.send(`Set my volume with the \"volume\" command`);
+  try {
+    client.commands.get(command).execute(message, args);
+  } catch (error) {
+    console.error(error);
+    message.reply("there was an error trying to execute that command!");
   }
 });
