@@ -13,8 +13,13 @@
   "author": "Nic",
   "license": "ISC",
   "dependencies": {
+    "@discordjs/opus": "github:discordjs/opus",
     "discord.js": "^12.5.3",
-    "dotenv": "^10.0.0"
+    "dotenv": "^10.0.0",
+    "ffmpeg": "^0.0.4",
+    "ffmpeg-static": "^4.3.0",
+    "nodemon": "^2.0.7",
+    "opusscript": "^0.0.8"
   },
   "devDependencies": {
     "eslint": "^7.28.0"
