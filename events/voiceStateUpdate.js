@@ -1,7 +1,4 @@
-const pathToGabeBorkMP3 = require("path").join(
-  __dirname,
-  "../sounds/gabeBork.mp3"
-);
+const pathToGabeBorkMP3 = "../sounds/gabeBork.mp3";
 const { botID } = require("../config.json");
 
 module.exports = {
