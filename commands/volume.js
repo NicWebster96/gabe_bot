@@ -8,7 +8,6 @@ module.exports = {
       );
     }
 
-    console.log(args);
     const requestedVolume = parseInt(args[0]);
     if (isNaN(requestedVolume)) {
       return message.reply("That doesn't seem to be a valid number");
