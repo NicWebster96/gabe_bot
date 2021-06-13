@@ -12,9 +12,7 @@ module.exports = {
       .join()
       .then((connection) => {
         setTimeout(() => {
-          const dispatcher = connection.play(pathToGabeBorkMP3, {
-            volume: 0.7,
-          });
+          const dispatcher = connection.play(pathToGabeBorkMP3);
           dispatcher.on("speaking", (speaking) => {
             if (!speaking) connection.disconnect();
           });
