@@ -1,4 +1,7 @@
-const pathToGabeBorkMP3 = "../sounds/gabeBork.mp3";
+const pathToGabeBorkMP3 = require("path").join(
+  __dirname,
+  "../sounds/gabeBork.mp3"
+);
 const { botID } = require("../config.json");
 
 module.exports = {
@@ -12,6 +15,7 @@ module.exports = {
       .join()
       .then((connection) => {
         setTimeout(() => {
+          console.log(`Playing ${pathToGabeBorkMP3}`);
           const dispatcher = connection.play(pathToGabeBorkMP3);
           dispatcher.on("speaking", (speaking) => {
             if (!speaking) connection.disconnect();
