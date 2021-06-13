@@ -17,6 +17,7 @@
     "dotenv": "^10.0.0",
     "ffmpeg": "^0.0.4",
     "ffmpeg-static": "^4.3.0",
+    "libsodium-wrappers": "^0.7.9",
     "nodemon": "^2.0.7",
     "opusscript": "^0.0.8"
   },
