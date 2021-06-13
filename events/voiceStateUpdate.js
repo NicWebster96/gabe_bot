@@ -1,4 +1,4 @@
-const gabeBorkMP3 = "../gabeBork.mp3";
+const gabeBorkMP3 = "../sounds/gabeBork.mp3";
 
 module.exports = {
   name: "voiceStateUpdate",
