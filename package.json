@@ -4,11 +4,11 @@
   "description": "Bork!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "\u0016https://github.com/NicWebster96/gabe_bot.git"
+    "url": "git+https://github.com/NicWebster96/gabe_bot.git"
   },
   "author": "Nic",
   "license": "ISC",
