@@ -14,12 +14,14 @@ module.exports = {
     newState.channel
       .join()
       .then((connection) => {
-        const dispatcher = connection.play(pathToGabeBorkMP3, { volume: 0.7 });
-        dispatcher.on("speaking", (speaking) => {
-          if (!speaking) {
-            connection.disconnect();
-          }
-        });
+        setTimeout(() => {
+          const dispatcher = connection.play(pathToGabeBorkMP3, {
+            volume: 0.7,
+          });
+          dispatcher.on("speaking", (speaking) => {
+            if (!speaking) connection.disconnect();
+          });
+        }, 1000);
       })
       .catch((err) => console.log(err));
   },
