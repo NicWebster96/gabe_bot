@@ -14,8 +14,7 @@ module.exports = {
     newState.channel
       .join()
       .then((connection) => {
-        console.log(pathToGabeBorkMP3);
-        const dispatcher = connection.play(gabeBorkMP3, { volume: 0.7 });
+        const dispatcher = connection.play(pathToGabeBorkMP3, { volume: 0.7 });
         dispatcher.on("speaking", (speaking) => {
           if (!speaking) {
             connection.disconnect();
