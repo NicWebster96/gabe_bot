@@ -11,17 +11,17 @@ module.exports = {
 
     console.log(`${oldState.member.nickname} entered ${newState.channel.name}`);
 
-    newState.channel
-      .join()
-      .then((connection) => {
-        setTimeout(() => {
+    if (!oldState.channel || oldState.channel !== newState.channel) {
+      newState.channel
+        .join()
+        .then((connection) => {
           console.log(`Playing ${pathToGabeBorkMP3}`);
           const dispatcher = connection.play(pathToGabeBorkMP3);
           dispatcher.on("speaking", (speaking) => {
             if (!speaking) connection.disconnect();
           });
-        }, 1000);
-      })
-      .catch((err) => console.log(err));
+        })
+        .catch((err) => console.log(err));
+    }
   },
 };
