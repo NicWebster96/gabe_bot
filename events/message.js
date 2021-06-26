@@ -1,24 +1,33 @@
 const { prefix } = require("../config.json");
+const parseMsg = require("../utils/parseMsg");
 
 module.exports = {
   name: "message",
   execute(message, client) {
-    // if the message either doesn't start with the prefix or the author is a bot, exit early
+    if (message.mentions.has(client.user)) {
+      return message.reply("Use my prefix to execute commands: " + prefix);
+    }
+
+    // if the message doesn't start with the prefix or if the author is a bot, return
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     console.log(
       "Command received from " + message.author + ": " + message.content
     );
-    const args = message.content.slice(prefix.length).trim().split(/ +/);
-    const command = args.shift().toLowerCase();
+    const result = parseMsg(message);
+    if (!result) return;
 
-    if (!client.commands.has(command)) return;
+    const command = result[0];
+    const args = result[1];
+    if (!client.commands.has(command)) return message.channel.send("Bork!");
 
     try {
       client.commands.get(command).execute(message, args);
     } catch (error) {
       console.error(error);
-      message.reply("there was an error trying to execute that command!");
+      message
+        .reply("there was an error trying to execute that command!")
+        .then((msg) => msg.delete({ timeout: 5000 }));
     }
   }
 };
