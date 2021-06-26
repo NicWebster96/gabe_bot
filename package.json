@@ -20,7 +20,8 @@
     "ffmpeg-static": "^4.3.0",
     "libsodium-wrappers": "^0.7.9",
     "nodemon": "^2.0.7",
-    "opusscript": "^0.0.8"
+    "opusscript": "^0.0.8",
+    "prettier": "^2.3.2"
   },
   "devDependencies": {
     "eslint": "^7.28.0"
