@@ -18,5 +18,5 @@ module.exports = {
     }
 
     return message.channel.send(`Setting volume to ${requestedVolume}. Bork!`);
-  },
+  }
 };

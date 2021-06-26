@@ -6,6 +6,9 @@ module.exports = {
     // if the message either doesn't start with the prefix or the author is a bot, exit early
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
+    console.log(
+      "Command received from " + message.author + ": " + message.content
+    );
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const command = args.shift().toLowerCase();
 
@@ -17,5 +20,5 @@ module.exports = {
       console.error(error);
       message.reply("there was an error trying to execute that command!");
     }
-  },
+  }
 };
