@@ -1,5 +1,6 @@
 module.exports = {
   name: "volume",
+  usage: "<number>",
   description: "Change volume of Gabe's bork!",
   execute(message, args) {
     if (args.length != 1) {
