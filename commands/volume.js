@@ -1,3 +1,6 @@
+const fs = require("fs");
+const { volumeFileName } = require("../config.json");
+
 module.exports = {
   name: "volume",
   usage: "<number>",
@@ -17,6 +20,11 @@ module.exports = {
         'Set my volume by providing a number 1-10\nExample: "gabe volume 5"'
       );
     }
+
+    const volString = JSON.stringify(requestedVolume / 10);
+    fs.writeFile(volumeFileName, volString, (err, res) => {
+      if (err) console.log("write file error:", err);
+    });
 
     return message.channel.send(`Setting volume to ${requestedVolume}. Bork!`);
   }
