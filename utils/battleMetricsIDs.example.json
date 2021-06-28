@@ -1,0 +1,17 @@
+// BattleMetrics is a service for online game servers that tracks
+// server play time. The battle metrics player id is a unique identifier
+// connected to a user's steam account.
+{
+  "users": [
+    {
+      "name": "",
+      "discordID": "",
+      "bmID": ""
+    },
+    {
+      "name": "",
+      "discordID": "",
+      "bmID": ""
+    }
+  ]
+}
