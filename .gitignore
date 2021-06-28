@@ -158,6 +158,9 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+# battlemetrics json
+battleMetricsIDs.json
+
     © 2021 GitHub, Inc.
     Terms
     Privacy
