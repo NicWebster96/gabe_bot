@@ -1,11 +1,11 @@
 # GabeBot
 
 GabeBot is a free, open-source bot for Discord servers, built using <a href="https://discord.js.org">discord.js</a>.
-Right now, this bot is only for personal use and can be forked and self-hosted.
+Currently this bot is my side project to dabble in discord bot development. Feel free to fork and modify as you please!
 
 # Why Gabe?
 
-<a href="https://meme.fandom.com/wiki/Gabe_The_Dog">Gabe The Dog</a> was a popular meme back in the day known for having a cute, high-pitched bark, which became known as a bork. Gabe's bork has been used in YouTube song remixes and gathered millions of views.
+<a href="https://meme.fandom.com/wiki/Gabe_The_Dog">Gabe The Dog</a> is a popular meme known for having a cute, high-pitched bark which became known as bork. Gabe's bork has been used in YouTube song remixes and gathered millions of views.
 
 On January 20th, 2017, Gabe sadly passed away. However, his bork lives on.
 
@@ -15,10 +15,12 @@ I created this bot with the intention of keeping Gabe's memory alive.
 
 GabeBot's primary purpose is to bork whenever a user enters a voice channel.
 
+I have left the main branch as simply a borking bot with the ability to set volume. The moreCommands branch extends the possible commands and contains some commands that I use for my personal Discord server.
+
 ### Commands
 
-`gabe volume` : Set the volume of gabe's bork when someone enter's the voice channel.
+`gabe volume (1-10)` : Set the volume of gabe's bork when someone enter's the voice channel.
 
 ### Invite Link
 
-https://discord.com/oauth2/authorize?client_id=853497662757928970&scope=bot&permissions=3148800
+<a href="https://discordjs.guide/preparations/setting-up-a-bot-application.html">Check out this guide on how to create your own bot and add it to your server!</a>
