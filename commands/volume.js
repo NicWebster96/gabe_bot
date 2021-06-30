@@ -1,12 +1,14 @@
 const fs = require("fs");
+const parseSuffix = require("../utils/parseSuffix");
 const { volumeFileName } = require("../config.json");
 
 module.exports = {
   name: "volume",
   usage: "<number>",
   description: "Change volume of Gabe's bork!",
-  execute(message, args) {
-    if (args.length != 1) {
+  execute(message, suffix) {
+    const args = parseSuffix(suffix);
+    if (args.length !== 1) {
       return message.channel.send(
         'Set my volume by providing a number 1-10\nExample: "gabe volume 5"'
       );

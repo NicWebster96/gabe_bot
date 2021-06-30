@@ -18,11 +18,11 @@ module.exports = {
     if (!result) return;
 
     const command = result[0];
-    const args = result[1];
+    const suffix = result[1];
     if (!client.commands.has(command)) return message.channel.send("Bork!");
 
     try {
-      client.commands.get(command).execute(message, args);
+      client.commands.get(command).execute(message, suffix);
     } catch (error) {
       console.error(error);
       message
