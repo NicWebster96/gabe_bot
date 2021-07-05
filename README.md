@@ -15,8 +15,6 @@ I created this bot with the intention of keeping Gabe's memory alive.
 
 GabeBot's primary purpose is to bork whenever a user enters a voice channel.
 
-I have left the main branch as simply a borking bot with the ability to set volume. The moreCommands branch extends the possible commands and contains some commands that I use for my personal Discord server.
-
 ## Commands
 
 `gabe volume (1-10)` : Set the volume of gabe's bork when someone enter's the voice channel.
