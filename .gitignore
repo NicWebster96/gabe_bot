@@ -1,5 +1,5 @@
 config.json
-battleMetricsIDs.json
+utils/battleMetricsIDs.json
 
 # Logs
 logs
