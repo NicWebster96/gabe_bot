@@ -19,7 +19,7 @@ GabeBot's primary purpose is to bork whenever a user enters a voice channel.
 
 `gabe volume (1-10)` : Set the volume of gabe's bork when someone enter's the voice channel.
 
-# Invite Link
+# I want gabe bot on my server
 
 <a href="https://discordjs.guide/preparations/setting-up-a-bot-application.html">Check out this guide on how to create your own bot and add it to your server!</a>
 
